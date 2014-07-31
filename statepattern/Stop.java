@@ -1,6 +1,6 @@
-package com.practice.statepattern;
+package designpatterns.statepattern;
 
-public class Stop implements MediaPlayerState{
+public class Stop implements IMediaPlayerState{
 
 	@Override
 	public void pressButton(StateContext ctx) {

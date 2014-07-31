@@ -1,10 +1,13 @@
-package com.practice.statepattern;
+package designpatterns.statepattern;
 
-public class Play  implements MediaPlayerState{
+public class Play  implements IMediaPlayerState{
 
 	@Override
+	/**
+	 * This method changes current state to pause state
+	 *  -- A difference with Strategy pattern where one state knows about another state
+	 */
 	public void pressButton(StateContext ctx) {
-		// TODO Auto-generated method stub
 		System.out.println("I am currently palying but goin to pause");
 		ctx = new StateContext(new Pause());
 		ctx.press();

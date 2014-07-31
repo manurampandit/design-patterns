@@ -1,22 +1,24 @@
-package com.practice.statepattern;
+package designpatterns.statepattern;
 
 public class StateContext {
-	
-	private MediaPlayerState mediaPlayerState;
-	
-	public StateContext(MediaPlayerState mediaPlayerState ){
-		this.mediaPlayerState=mediaPlayerState;
-	}
+	//notice composition-- this might sound similar to state but there is a difference 
+	//Refer Play and Pause class for the difference
+	private IMediaPlayerState mediaPlayerState;
 
-	public void setMediaPlayerState(MediaPlayerState mediaPlayerState) {
+	public StateContext(IMediaPlayerState mediaPlayerState) {
 		this.mediaPlayerState = mediaPlayerState;
 	}
 
-	public MediaPlayerState getMediaPlayerState() {
-		return mediaPlayerState;
-	}
+	// TODO: remove them.. probably getter nd setters are not required.
+	// public void setMediaPlayerState(IMediaPlayerState mediaPlayerState) {
+	// this.mediaPlayerState = mediaPlayerState;
+	// }
+	//
+	// public IMediaPlayerState getMediaPlayerState() {
+	// return mediaPlayerState;
+	// }
 	
-	public void press(){
+	public void press() {
 		mediaPlayerState.pressButton(this);
 	}
 
